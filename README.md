@@ -1,68 +1,81 @@
 # SVG to Grayscale
 
-Convert any SVG to a grayscale SVG with two different methods—**HSL-based** or **luminance-based**—all in **JavaScript**. This project includes:
+Convert any SVG into **HSL-based** or **luminance-based** grayscale SVGs — in **JavaScript**. This project leverages:
 
-1. A **library** (`grayscale-svg.js`) that works in **Node** (local dependencies) or **the browser** (CDN imports).
-2. An **example page** (`index.html`) hosted on GitHub Pages, letting users upload an SVG to generate grayscale derivatives.
-3. A **Node-based test suite** that processes a folder of very difficult SVGs (`test/svgs`) and produces grayscale outputs in `test/output`.  
+- [**svgson**](https://github.com/elrumordelaluz/svgson) for parsing the raw SVG into a manipulable AST  
+- [**tinycolor**](https://github.com/bgrins/TinyColor) for color parsing and transformations
+
+It includes:
+
+1. A **library** (`grayscale-svg.js`) that works in **Node** (using local dependencies) or in the **browser** (via CDN imports).
+2. An **example page** (`index.html`) hosted on GitHub Pages, letting users upload an SVG to produce two grayscale variants.
+3. A **Node-based test suite** that processes a folder of edge-case SVGs (`test/svgs`) and produces HSL & luminance outputs in `test/output`.
 
 ## Features
 
 - **Two Grayscale Approaches**  
-  - **HSL**: Uses [TinyColor](https://github.com/bgrins/TinyColor)'s `.greyscale()` (desaturation in HSL). Red and yellow become similar grays if their HSL lightness is close, for example.  
-  - **Luminance**: Uses the formula \(\text{Y} = 0.299R + 0.587G + 0.114B\). Red and yellow remain different grays based on actual brightness.
+  - **HSL**: Uses TinyColor’s `.greyscale()` (an HSL desaturation). Red/yellow may converge if their HSL lightness is similar.  
+  - **Luminance**: Uses \(\text{Y} = 0.299R + 0.587G + 0.114B\). Distinguishes brightness differences (e.g. red vs. yellow).
 
-- **Partial Desaturation** (for HSL only):  
-  - `desaturationAmount = 0` → keep color, `50` → half, `100` → full grayscale, etc.  
-  - *Luminance method* ignores partial amounts (always full grayscale).
+- **Partial Desaturation** (HSL only):
+  - `desaturationAmount = 0` → keep color, up to `100` → full grayscale.  
+  - Luminance ignores partial amounts, always full grayscale.
 
-- **Gradient Preservation**:  
-  - Paint servers like `fill="url(#myGradient)"` are **kept**.  
-  - Gradient stops (`<stop stop-color="..."/>`) are individually converted to grayscale, so you get a grayscale gradient.
+- **Gradient Preservation**  
+  - If `fill="url(#myGradient)"`, the shape references remain.  
+  - `<stop stop-color="...">` stops are individually converted, yielding a grayscale gradient.
 
-- **Inline Style Expansion**:  
-  - The code converts `style="fill: #f00; stroke: #000"` into direct attributes (`fill="#f00"`, `stroke="#000"`), then grayscales them if needed.  
+- **Inline Style Expansion**  
+  - `style="fill: #f00; stroke: #000"` becomes direct attributes, then converted to grayscale.
 
 ## Repository Structure
 
-```bash
+```
 svg-to-grayscale/
 ├─ README.md               # This file
-├─ grayscale-svg.js        # The main library, environment detection inside
+├─ grayscale-svg.js        # Main library, environment detection inside
 ├─ index.html              # A sample page for GitHub Pages (upload & compare)
 ├─ package.json            # (Optional) for Node scripts / dev
 └─ test/
    ├─ run-tests.js         # Node-based script that processes each .svg in /svgs
-   ├─ generate-compare-html.js  # Optionally generate an HTML side-by-side
+   ├─ generate-compare-html.js  # Generate an HTML side-by-side compare
    ├─ svgs/                # Edge-case input SVGs
-   └─ output/              # Outputs from the grayscale conversions
+   └─ output/              # Outputs of the grayscale conversions
 ```
 
 ## Quick Start
 
-### 1) Use in a **Browser** 
+### 1) In the **Browser**
 
-https://mettamatt.github.io/svg-to-grayscale/
+- Visit: <https://mettamatt.github.io/svg-to-grayscale/>  
+- Upload an SVG.  
+- You’ll see **Original**, **HSL** grayscale, and **Luminance** grayscale versions side by side.  
+- Download either or both.
 
-### 2) Use in **Node** (Local Testing or Scripts)
+### 2) In **Node** (Local Scripts or Testing)
 
 Install:
 ```bash
 npm install svgson tinycolor2
 ```
-Then in your code:
+
+Then:
+
 ```js
 import { convertSvgToGrayscale } from './grayscale-svg.js';
 
 (async () => {
-  const originalSvg = '<svg> ... </svg>'; // a string
+  const originalSvg = '<svg> ... </svg>';
+  // HSL approach
   const hslResult = await convertSvgToGrayscale(originalSvg, {
-    grayscaleMethod: 'hsl', 
-    desaturationAmount: 100
+    grayscaleMethod: 'hsl',
+    desaturationAmount: 100 // or partial
   });
+  // Luminance approach
   const lumResult = await convertSvgToGrayscale(originalSvg, {
     grayscaleMethod: 'luminance'
   });
+
   console.log('HSL output:', hslResult);
   console.log('Luminance output:', lumResult);
 })();
@@ -70,24 +83,23 @@ import { convertSvgToGrayscale } from './grayscale-svg.js';
 
 ### 3) Testing & Examples
 
-- **Run Tests**:  
+- **Run Tests**  
   ```bash
   cd test
   node run-tests.js
   ```
-  This will:
-  - Read each `.svg` in `test/svgs/`
-  - Produce `grayscale-hsl-<filename>` and `grayscale-lum-<filename>` in `test/output/`
-  - Log file sizes, successes, or errors.
+  - Reads each `.svg` in `test/svgs`
+  - Outputs `grayscale-hsl-<filename>` & `grayscale-lum-<filename>` into `test/output`
+  - Logs file sizes, success/errors
 
-- **Compare**:  
-  If you have `generate-compare-html.js`, you can run:
+- **Compare**  
   ```bash
   node generate-compare-html.js
   ```
-  It produces `test/compare.html`, which shows original and grayscale results side by side.
+  Produces `test/compare.html` to view original & grayscale outputs side by side in a browser.
 
 ### Known Limitations
 
-- **No <style> Tag Support**: If your SVG has `<style>...</style>` blocks or external CSS references, these are **not** parsed. The library will warn and skip them.  
-- **DTD Entities** (like `&myEntity;`) or advanced references are not expanded.  
+- **No `<style>` Tag Parsing**: Inline or external CSS rules aren’t parsed.  
+- **DTD Entities** (`&myEntity;`) or advanced references aren’t expanded.  
+- **Partial Alpha** or advanced color profiles aren’t specifically handled.
