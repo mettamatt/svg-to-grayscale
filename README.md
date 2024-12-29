@@ -1,4 +1,4 @@
-# SVG to Grayscale
+# SVG to Grayscale SVG
 
 Convert any SVG into **HSL-based** or **luminance-based** grayscale SVGs — in **JavaScript**. This project leverages:
 
