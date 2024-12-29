@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SVG to Grayscale Demo</title>
+  <title>SVG to Grayscale Converter</title>
   <style>
     body {
       font-family: sans-serif;
@@ -12,7 +12,14 @@
     }
     h1 {
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    p.description {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      color: #333;
+      line-height: 1.4;
     }
     #controls {
       display: flex;
@@ -20,6 +27,7 @@
       gap: 1rem;
       align-items: center;
       margin-bottom: 1rem;
+      justify-content: center;
     }
     #controls > * {
       margin-top: 0.5rem;
@@ -72,6 +80,7 @@
       font-style: italic;
       color: #666;
       margin-top: 0.5rem;
+      text-align: center;
     }
     #loadingIndicator {
       margin-left: 1rem;
@@ -84,11 +93,24 @@
 <body>
 
 <h1>SVG to Grayscale Converter</h1>
+<p class="description">
+  This tool converts your <strong>SVG</strong> file into two grayscale versions:
+  one using an <strong>HSL-based method</strong> and the other using a 
+  <strong>luminance-based</strong> approach. 
+  <br><br>
+  <strong>Important:</strong> This is an <em>SVG-to-SVG</em> transformation &mdash;
+  your images are not rasterized or turned into a bitmap. Instead, we parse and rewrite
+  the vector data so that all colors become shades of gray.
+  <br><br>
+  Simply upload an SVG below, and you can preview and download each grayscale version.
+</p>
+
 <div id="controls">
   <input type="file" id="fileInput" accept=".svg" />
   <span id="loadingIndicator">Converting...</span>
-  <div id="msg"></div>
 </div>
+
+<div id="msg"></div>
 
 <div id="preview-container">
   <!-- Original SVG preview -->
@@ -142,17 +164,17 @@
     if (!file) return;
 
     if (!file.name.toLowerCase().endsWith('.svg')) {
-      msg.textContent = 'Please select a valid .svg file';
+      msg.textContent = 'Please select a valid .svg file.';
       return;
     }
-    msg.textContent = ''; // Clear any old message
+    msg.textContent = ''; // Clear old message
 
     const reader = new FileReader();
     reader.onload = async (e) => {
       originalSvgString = e.target.result;
       // Show the Original Box
       originalBox.style.display = 'block';
-      // Put the raw SVG into a data: url
+      // Put the raw SVG into a data URL
       const originalDataUrl = 'data:image/svg+xml;base64,' + btoa(originalSvgString);
       originalPreview.src = originalDataUrl;
 
@@ -163,21 +185,22 @@
       // Start conversion
       loadingIndicator.style.display = 'inline';
       try {
-        // 1) HSL conversion
+        // HSL-based grayscale
         hslSvgString = await convertSvgToGrayscale(originalSvgString, {
           grayscaleMethod: 'hsl',
-          desaturationAmount: 100 // full
+          desaturationAmount: 100 // fully desaturate
         });
-        // 2) Luminance conversion
+
+        // Luminance-based grayscale
         lumSvgString = await convertSvgToGrayscale(originalSvgString, {
           grayscaleMethod: 'luminance'
         });
 
-        // Show the HSL box & LUM box
+        // Show the two results
         hslBox.style.display = 'block';
         lumBox.style.display = 'block';
 
-        // Turn them into data URIs for preview
+        // Convert them to data URLs for preview
         hslPreview.src = 'data:image/svg+xml;base64,' + btoa(hslSvgString);
         lumPreview.src = 'data:image/svg+xml;base64,' + btoa(lumSvgString);
       } catch (err) {
