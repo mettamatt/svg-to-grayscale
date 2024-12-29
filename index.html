@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG to Grayscale Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem auto;
+      max-width: 1200px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    #controls > * {
+      margin-top: 0.5rem;
+    }
+    input[type="file"] {
+      cursor: pointer;
+    }
+    #preview-container {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: space-between;
+      flex-wrap: wrap; /* so it wraps if the screen is too narrow */
+    }
+    .preview-box {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 1rem;
+      overflow: auto;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .preview-box h2 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .preview-img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      margin-bottom: 0.5rem;
+    }
+    button.download-btn {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+    button.download-btn:hover {
+      background-color: #005dc1;
+    }
+    #msg {
+      font-style: italic;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    #loadingIndicator {
+      margin-left: 1rem;
+      font-weight: bold;
+      color: #333;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>SVG to Grayscale Converter</h1>
+<div id="controls">
+  <input type="file" id="fileInput" accept=".svg" />
+  <span id="loadingIndicator">Converting...</span>
+  <div id="msg"></div>
+</div>
+
+<div id="preview-container">
+  <!-- Original SVG preview -->
+  <div class="preview-box" id="originalBox" style="display: none;">
+    <h2>Original</h2>
+    <img id="originalPreview" class="preview-img" alt="Original SVG" />
+  </div>
+
+  <!-- HSL-based Grayscale -->
+  <div class="preview-box" id="hslBox" style="display: none;">
+    <h2>HSL Grayscale</h2>
+    <img id="hslPreview" class="preview-img" alt="HSL Grayscale" />
+    <button class="download-btn" id="downloadHSL">Download HSL</button>
+  </div>
+
+  <!-- Luminance-based Grayscale -->
+  <div class="preview-box" id="lumBox" style="display: none;">
+    <h2>Luminance Grayscale</h2>
+    <img id="lumPreview" class="preview-img" alt="Luminance Grayscale" />
+    <button class="download-btn" id="downloadLUM">Download Luminance</button>
+  </div>
+</div>
+
+<script type="module">
+  import { convertSvgToGrayscale } from './grayscale-svg.js';
+
+  const fileInput = document.getElementById('fileInput');
+  const loadingIndicator = document.getElementById('loadingIndicator');
+  const msg = document.getElementById('msg');
+
+  const originalBox = document.getElementById('originalBox');
+  const originalPreview = document.getElementById('originalPreview');
+
+  const hslBox = document.getElementById('hslBox');
+  const hslPreview = document.getElementById('hslPreview');
+  const downloadHSL = document.getElementById('downloadHSL');
+
+  const lumBox = document.getElementById('lumBox');
+  const lumPreview = document.getElementById('lumPreview');
+  const downloadLUM = document.getElementById('downloadLUM');
+
+  let originalSvgString = '';
+  let hslSvgString = '';
+  let lumSvgString = '';
+
+  // Hide loading initially
+  loadingIndicator.style.display = 'none';
+
+  fileInput.addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    if (!file.name.toLowerCase().endsWith('.svg')) {
+      msg.textContent = 'Please select a valid .svg file';
+      return;
+    }
+    msg.textContent = ''; // Clear any old message
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      originalSvgString = e.target.result;
+      // Show the Original Box
+      originalBox.style.display = 'block';
+      // Put the raw SVG into a data: url
+      const originalDataUrl = 'data:image/svg+xml;base64,' + btoa(originalSvgString);
+      originalPreview.src = originalDataUrl;
+
+      // Clear old grayscale outputs
+      hslBox.style.display = 'none';
+      lumBox.style.display = 'none';
+
+      // Start conversion
+      loadingIndicator.style.display = 'inline';
+      try {
+        // 1) HSL conversion
+        hslSvgString = await convertSvgToGrayscale(originalSvgString, {
+          grayscaleMethod: 'hsl',
+          desaturationAmount: 100 // full
+        });
+        // 2) Luminance conversion
+        lumSvgString = await convertSvgToGrayscale(originalSvgString, {
+          grayscaleMethod: 'luminance'
+        });
+
+        // Show the HSL box & LUM box
+        hslBox.style.display = 'block';
+        lumBox.style.display = 'block';
+
+        // Turn them into data URIs for preview
+        hslPreview.src = 'data:image/svg+xml;base64,' + btoa(hslSvgString);
+        lumPreview.src = 'data:image/svg+xml;base64,' + btoa(lumSvgString);
+      } catch (err) {
+        console.error(err);
+        msg.textContent = `Error during conversion: ${err.message || err}`;
+      } finally {
+        loadingIndicator.style.display = 'none';
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  // Download HSL
+  downloadHSL.addEventListener('click', () => {
+    if (!hslSvgString) return;
+    const blob = new Blob([hslSvgString], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'grayscale-hsl.svg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+
+  // Download Luminance
+  downloadLUM.addEventListener('click', () => {
+    if (!lumSvgString) return;
+    const blob = new Blob([lumSvgString], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'grayscale-lum.svg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+</body>
+</html>
