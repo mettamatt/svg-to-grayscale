@@ -83,6 +83,8 @@ import { convertSvgToGrayscale } from './grayscale-svg.js';
 
 ### 3) Testing & Examples
 
+The results of the tests are here: https://mettamatt.github.io/svg-to-grayscale/test/compare.html
+
 - **Run Tests**  
   ```bash
   cd test
