@@ -118,4 +118,3 @@ Here’s a comparison table for the two grayscale methods:
 
 - **No `<style>` Tag Parsing**: Inline or external CSS rules aren’t parsed.  
 - **DTD Entities** (`&myEntity;`) or advanced references aren’t expanded.  
-- **Partial Alpha** or advanced color profiles aren’t specifically handled.
