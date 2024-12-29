@@ -1,0 +1,4743 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SVG Comparison: Original vs. HSL vs. Luminance</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem auto;
+      max-width: 1200px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    .item {
+      margin-bottom: 2rem;
+    }
+    .compare-box {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 1rem;
+      flex: 1 1 33%;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      margin-bottom: 0.5rem;
+    }
+    figcaption {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .no-file {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>SVG Comparison: Original vs. HSL vs. Luminance</h1>
+  <p>
+    This page shows each original SVG (from <code>svgs</code>) alongside its 
+    HSL-based and Luminance-based grayscale outputs (from <code>output</code>).
+  </p>
+
+    <div class="item">
+      <h2>410.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/410.svg" alt="Original: 410.svg" />
+          <figcaption>Original: 410.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-410.svg" alt="HSL: 410.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-410.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-410.svg" alt="Lum: 410.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-410.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>AJ_Digital_Camera.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/AJ_Digital_Camera.svg" alt="Original: AJ_Digital_Camera.svg" />
+          <figcaption>Original: AJ_Digital_Camera.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-AJ_Digital_Camera.svg" alt="HSL: AJ_Digital_Camera.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-AJ_Digital_Camera.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-AJ_Digital_Camera.svg" alt="Lum: AJ_Digital_Camera.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-AJ_Digital_Camera.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSans-Bold.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSans-Bold.svg" alt="Original: DroidSans-Bold.svg" />
+          <figcaption>Original: DroidSans-Bold.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSans-Bold.svg" alt="HSL: DroidSans-Bold.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSans-Bold.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSans-Bold.svg" alt="Lum: DroidSans-Bold.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSans-Bold.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSans.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSans.svg" alt="Original: DroidSans.svg" />
+          <figcaption>Original: DroidSans.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSans.svg" alt="HSL: DroidSans.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSans.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSans.svg" alt="Lum: DroidSans.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSans.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSansMono.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSansMono.svg" alt="Original: DroidSansMono.svg" />
+          <figcaption>Original: DroidSansMono.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSansMono.svg" alt="HSL: DroidSansMono.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSansMono.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSansMono.svg" alt="Lum: DroidSansMono.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSansMono.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSerif-Bold.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSerif-Bold.svg" alt="Original: DroidSerif-Bold.svg" />
+          <figcaption>Original: DroidSerif-Bold.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSerif-Bold.svg" alt="HSL: DroidSerif-Bold.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSerif-Bold.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSerif-Bold.svg" alt="Lum: DroidSerif-Bold.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSerif-Bold.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSerif-BoldItalic.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSerif-BoldItalic.svg" alt="Original: DroidSerif-BoldItalic.svg" />
+          <figcaption>Original: DroidSerif-BoldItalic.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSerif-BoldItalic.svg" alt="HSL: DroidSerif-BoldItalic.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSerif-BoldItalic.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSerif-BoldItalic.svg" alt="Lum: DroidSerif-BoldItalic.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSerif-BoldItalic.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSerif-Italic.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSerif-Italic.svg" alt="Original: DroidSerif-Italic.svg" />
+          <figcaption>Original: DroidSerif-Italic.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSerif-Italic.svg" alt="HSL: DroidSerif-Italic.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSerif-Italic.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSerif-Italic.svg" alt="Lum: DroidSerif-Italic.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSerif-Italic.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>DroidSerif-Regular.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/DroidSerif-Regular.svg" alt="Original: DroidSerif-Regular.svg" />
+          <figcaption>Original: DroidSerif-Regular.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-DroidSerif-Regular.svg" alt="HSL: DroidSerif-Regular.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-DroidSerif-Regular.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-DroidSerif-Regular.svg" alt="Lum: DroidSerif-Regular.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-DroidSerif-Regular.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>Steps.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/Steps.svg" alt="Original: Steps.svg" />
+          <figcaption>Original: Steps.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-Steps.svg" alt="HSL: Steps.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-Steps.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-Steps.svg" alt="Lum: Steps.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-Steps.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>USStates.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/USStates.svg" alt="Original: USStates.svg" />
+          <figcaption>Original: USStates.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-USStates.svg" alt="HSL: USStates.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-USStates.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-USStates.svg" alt="Lum: USStates.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-USStates.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>aa.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/aa.svg" alt="Original: aa.svg" />
+          <figcaption>Original: aa.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-aa.svg" alt="HSL: aa.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-aa.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-aa.svg" alt="Lum: aa.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-aa.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>accessible.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/accessible.svg" alt="Original: accessible.svg" />
+          <figcaption>Original: accessible.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-accessible.svg" alt="HSL: accessible.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-accessible.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-accessible.svg" alt="Lum: accessible.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-accessible.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>acid.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/acid.svg" alt="Original: acid.svg" />
+          <figcaption>Original: acid.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-acid.svg" alt="HSL: acid.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-acid.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-acid.svg" alt="Lum: acid.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-acid.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>adobe.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/adobe.svg" alt="Original: adobe.svg" />
+          <figcaption>Original: adobe.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-adobe.svg" alt="HSL: adobe.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-adobe.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-adobe.svg" alt="Lum: adobe.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-adobe.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>alphachannel.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/alphachannel.svg" alt="Original: alphachannel.svg" />
+          <figcaption>Original: alphachannel.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-alphachannel.svg" alt="HSL: alphachannel.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-alphachannel.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-alphachannel.svg" alt="Lum: alphachannel.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-alphachannel.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>android.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/android.svg" alt="Original: android.svg" />
+          <figcaption>Original: android.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-android.svg" alt="HSL: android.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-android.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-android.svg" alt="Lum: android.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-android.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>anim1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/anim1.svg" alt="Original: anim1.svg" />
+          <figcaption>Original: anim1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-anim1.svg" alt="HSL: anim1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-anim1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-anim1.svg" alt="Lum: anim1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-anim1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>anim2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/anim2.svg" alt="Original: anim2.svg" />
+          <figcaption>Original: anim2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-anim2.svg" alt="HSL: anim2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-anim2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-anim2.svg" alt="Lum: anim2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-anim2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>anim3.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/anim3.svg" alt="Original: anim3.svg" />
+          <figcaption>Original: anim3.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-anim3.svg" alt="HSL: anim3.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-anim3.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-anim3.svg" alt="Lum: anim3.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-anim3.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>atom.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/atom.svg" alt="Original: atom.svg" />
+          <figcaption>Original: atom.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-atom.svg" alt="HSL: atom.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-atom.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-atom.svg" alt="Lum: atom.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-atom.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>basura.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/basura.svg" alt="Original: basura.svg" />
+          <figcaption>Original: basura.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-basura.svg" alt="HSL: basura.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-basura.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-basura.svg" alt="Lum: basura.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-basura.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>beacon.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/beacon.svg" alt="Original: beacon.svg" />
+          <figcaption>Original: beacon.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-beacon.svg" alt="HSL: beacon.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-beacon.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-beacon.svg" alt="Lum: beacon.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-beacon.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>betterplace.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/betterplace.svg" alt="Original: betterplace.svg" />
+          <figcaption>Original: betterplace.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-betterplace.svg" alt="HSL: betterplace.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-betterplace.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-betterplace.svg" alt="Lum: betterplace.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-betterplace.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>blocks_game.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/blocks_game.svg" alt="Original: blocks_game.svg" />
+          <figcaption>Original: blocks_game.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-blocks_game.svg" alt="HSL: blocks_game.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-blocks_game.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-blocks_game.svg" alt="Lum: blocks_game.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-blocks_game.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>bloglines.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/bloglines.svg" alt="Original: bloglines.svg" />
+          <figcaption>Original: bloglines.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-bloglines.svg" alt="HSL: bloglines.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-bloglines.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-bloglines.svg" alt="Lum: bloglines.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-bloglines.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>bozo.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/bozo.svg" alt="Original: bozo.svg" />
+          <figcaption>Original: bozo.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-bozo.svg" alt="HSL: bozo.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-bozo.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-bozo.svg" alt="Lum: bozo.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-bozo.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>bzr.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/bzr.svg" alt="Original: bzr.svg" />
+          <figcaption>Original: bzr.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-bzr.svg" alt="HSL: bzr.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-bzr.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-bzr.svg" alt="Lum: bzr.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-bzr.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>bzrfeed.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/bzrfeed.svg" alt="Original: bzrfeed.svg" />
+          <figcaption>Original: bzrfeed.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-bzrfeed.svg" alt="HSL: bzrfeed.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-bzrfeed.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-bzrfeed.svg" alt="Lum: bzrfeed.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-bzrfeed.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ca.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ca.svg" alt="Original: ca.svg" />
+          <figcaption>Original: ca.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ca.svg" alt="HSL: ca.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ca.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ca.svg" alt="Lum: ca.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ca.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>car.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/car.svg" alt="Original: car.svg" />
+          <figcaption>Original: car.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-car.svg" alt="HSL: car.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-car.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-car.svg" alt="Lum: car.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-car.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>cartman.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/cartman.svg" alt="Original: cartman.svg" />
+          <figcaption>Original: cartman.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-cartman.svg" alt="HSL: cartman.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-cartman.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-cartman.svg" alt="Lum: cartman.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-cartman.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>caution.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/caution.svg" alt="Original: caution.svg" />
+          <figcaption>Original: caution.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-caution.svg" alt="HSL: caution.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-caution.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-caution.svg" alt="Lum: caution.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-caution.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>cc.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/cc.svg" alt="Original: cc.svg" />
+          <figcaption>Original: cc.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-cc.svg" alt="HSL: cc.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-cc.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-cc.svg" alt="Lum: cc.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-cc.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ch.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ch.svg" alt="Original: ch.svg" />
+          <figcaption>Original: ch.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ch.svg" alt="HSL: ch.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ch.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ch.svg" alt="Lum: ch.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ch.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>check.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/check.svg" alt="Original: check.svg" />
+          <figcaption>Original: check.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-check.svg" alt="HSL: check.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-check.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-check.svg" alt="Lum: check.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-check.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>circles1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/circles1.svg" alt="Original: circles1.svg" />
+          <figcaption>Original: circles1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-circles1.svg" alt="HSL: circles1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-circles1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-circles1.svg" alt="Lum: circles1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-circles1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>clippath.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/clippath.svg" alt="Original: clippath.svg" />
+          <figcaption>Original: clippath.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-clippath.svg" alt="HSL: clippath.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-clippath.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-clippath.svg" alt="Lum: clippath.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-clippath.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>compass.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/compass.svg" alt="Original: compass.svg" />
+          <figcaption>Original: compass.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-compass.svg" alt="HSL: compass.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-compass.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-compass.svg" alt="Lum: compass.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-compass.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>compuserver_msn_Ford_Focus.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/compuserver_msn_Ford_Focus.svg" alt="Original: compuserver_msn_Ford_Focus.svg" />
+          <figcaption>Original: compuserver_msn_Ford_Focus.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-compuserver_msn_Ford_Focus.svg" alt="HSL: compuserver_msn_Ford_Focus.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-compuserver_msn_Ford_Focus.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-compuserver_msn_Ford_Focus.svg" alt="Lum: compuserver_msn_Ford_Focus.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-compuserver_msn_Ford_Focus.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>copyleft.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/copyleft.svg" alt="Original: copyleft.svg" />
+          <figcaption>Original: copyleft.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-copyleft.svg" alt="HSL: copyleft.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-copyleft.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-copyleft.svg" alt="Lum: copyleft.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-copyleft.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>copyright.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/copyright.svg" alt="Original: copyright.svg" />
+          <figcaption>Original: copyright.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-copyright.svg" alt="HSL: copyright.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-copyright.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-copyright.svg" alt="Lum: copyright.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-copyright.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>couch.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/couch.svg" alt="Original: couch.svg" />
+          <figcaption>Original: couch.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-couch.svg" alt="HSL: couch.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-couch.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-couch.svg" alt="Lum: couch.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-couch.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>couchdb.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/couchdb.svg" alt="Original: couchdb.svg" />
+          <figcaption>Original: couchdb.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-couchdb.svg" alt="HSL: couchdb.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-couchdb.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-couchdb.svg" alt="Lum: couchdb.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-couchdb.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>cygwin.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/cygwin.svg" alt="Original: cygwin.svg" />
+          <figcaption>Original: cygwin.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-cygwin.svg" alt="HSL: cygwin.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-cygwin.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-cygwin.svg" alt="Lum: cygwin.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-cygwin.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>debian.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/debian.svg" alt="Original: debian.svg" />
+          <figcaption>Original: debian.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-debian.svg" alt="HSL: debian.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-debian.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-debian.svg" alt="Lum: debian.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-debian.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>decimal.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/decimal.svg" alt="Original: decimal.svg" />
+          <figcaption>Original: decimal.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-decimal.svg" alt="HSL: decimal.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-decimal.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-decimal.svg" alt="Lum: decimal.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-decimal.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>dh.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/dh.svg" alt="Original: dh.svg" />
+          <figcaption>Original: dh.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-dh.svg" alt="HSL: dh.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-dh.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-dh.svg" alt="Lum: dh.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-dh.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>digg.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/digg.svg" alt="Original: digg.svg" />
+          <figcaption>Original: digg.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-digg.svg" alt="HSL: digg.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-digg.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-digg.svg" alt="Lum: digg.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-digg.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>displayWebStats.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/displayWebStats.svg" alt="Original: displayWebStats.svg" />
+          <figcaption>Original: displayWebStats.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-displayWebStats.svg" alt="HSL: displayWebStats.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-displayWebStats.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-displayWebStats.svg" alt="Lum: displayWebStats.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-displayWebStats.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>dojo.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/dojo.svg" alt="Original: dojo.svg" />
+          <figcaption>Original: dojo.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-dojo.svg" alt="HSL: dojo.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-dojo.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-dojo.svg" alt="Lum: dojo.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-dojo.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>dst.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/dst.svg" alt="Original: dst.svg" />
+          <figcaption>Original: dst.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-dst.svg" alt="HSL: dst.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-dst.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-dst.svg" alt="Lum: dst.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-dst.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>duck.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/duck.svg" alt="Original: duck.svg" />
+          <figcaption>Original: duck.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-duck.svg" alt="HSL: duck.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-duck.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-duck.svg" alt="Lum: duck.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-duck.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>duke.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/duke.svg" alt="Original: duke.svg" />
+          <figcaption>Original: duke.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-duke.svg" alt="HSL: duke.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-duke.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-duke.svg" alt="Lum: duke.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-duke.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>dukechain.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/dukechain.svg" alt="Original: dukechain.svg" />
+          <figcaption>Original: dukechain.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-dukechain.svg" alt="HSL: dukechain.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-dukechain.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-dukechain.svg" alt="Lum: dukechain.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-dukechain.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>easypeasy.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/easypeasy.svg" alt="Original: easypeasy.svg" />
+          <figcaption>Original: easypeasy.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-easypeasy.svg" alt="HSL: easypeasy.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-easypeasy.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-easypeasy.svg" alt="Lum: easypeasy.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-easypeasy.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>eee.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/eee.svg" alt="Original: eee.svg" />
+          <figcaption>Original: eee.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-eee.svg" alt="HSL: eee.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-eee.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-eee.svg" alt="Lum: eee.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-eee.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>eff.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/eff.svg" alt="Original: eff.svg" />
+          <figcaption>Original: eff.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-eff.svg" alt="HSL: eff.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-eff.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-eff.svg" alt="Lum: eff.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-eff.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>erlang.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/erlang.svg" alt="Original: erlang.svg" />
+          <figcaption>Original: erlang.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-erlang.svg" alt="HSL: erlang.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-erlang.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-erlang.svg" alt="Lum: erlang.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-erlang.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>evol.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/evol.svg" alt="Original: evol.svg" />
+          <figcaption>Original: evol.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-evol.svg" alt="HSL: evol.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-evol.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-evol.svg" alt="Lum: evol.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-evol.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>facebook.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/facebook.svg" alt="Original: facebook.svg" />
+          <figcaption>Original: facebook.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-facebook.svg" alt="HSL: facebook.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-facebook.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-facebook.svg" alt="Lum: facebook.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-facebook.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>faux-art.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/faux-art.svg" alt="Original: faux-art.svg" />
+          <figcaption>Original: faux-art.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-faux-art.svg" alt="HSL: faux-art.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-faux-art.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-faux-art.svg" alt="Lum: faux-art.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-faux-art.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>fb.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/fb.svg" alt="Original: fb.svg" />
+          <figcaption>Original: fb.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-fb.svg" alt="HSL: fb.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-fb.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-fb.svg" alt="Lum: fb.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-fb.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>feed.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/feed.svg" alt="Original: feed.svg" />
+          <figcaption>Original: feed.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-feed.svg" alt="HSL: feed.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-feed.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-feed.svg" alt="Lum: feed.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-feed.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>feedsync.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/feedsync.svg" alt="Original: feedsync.svg" />
+          <figcaption>Original: feedsync.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-feedsync.svg" alt="HSL: feedsync.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-feedsync.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-feedsync.svg" alt="Lum: feedsync.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-feedsync.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>fsm.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/fsm.svg" alt="Original: fsm.svg" />
+          <figcaption>Original: fsm.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-fsm.svg" alt="HSL: fsm.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-fsm.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-fsm.svg" alt="Lum: fsm.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-fsm.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gallardo.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gallardo.svg" alt="Original: gallardo.svg" />
+          <figcaption>Original: gallardo.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gallardo.svg" alt="HSL: gallardo.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gallardo.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gallardo.svg" alt="Lum: gallardo.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gallardo.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gaussian1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gaussian1.svg" alt="Original: gaussian1.svg" />
+          <figcaption>Original: gaussian1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gaussian1.svg" alt="HSL: gaussian1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gaussian1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gaussian1.svg" alt="Lum: gaussian1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gaussian1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gaussian2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gaussian2.svg" alt="Original: gaussian2.svg" />
+          <figcaption>Original: gaussian2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gaussian2.svg" alt="HSL: gaussian2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gaussian2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gaussian2.svg" alt="Lum: gaussian2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gaussian2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gaussian3.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gaussian3.svg" alt="Original: gaussian3.svg" />
+          <figcaption>Original: gaussian3.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gaussian3.svg" alt="HSL: gaussian3.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gaussian3.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gaussian3.svg" alt="Lum: gaussian3.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gaussian3.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gcheck.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gcheck.svg" alt="Original: gcheck.svg" />
+          <figcaption>Original: gcheck.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gcheck.svg" alt="HSL: gcheck.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gcheck.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gcheck.svg" alt="Lum: gcheck.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gcheck.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>genshi.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/genshi.svg" alt="Original: genshi.svg" />
+          <figcaption>Original: genshi.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-genshi.svg" alt="HSL: genshi.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-genshi.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-genshi.svg" alt="Lum: genshi.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-genshi.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>git.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/git.svg" alt="Original: git.svg" />
+          <figcaption>Original: git.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-git.svg" alt="HSL: git.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-git.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-git.svg" alt="Lum: git.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-git.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gnome2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gnome2.svg" alt="Original: gnome2.svg" />
+          <figcaption>Original: gnome2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gnome2.svg" alt="HSL: gnome2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gnome2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gnome2.svg" alt="Lum: gnome2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gnome2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>google.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/google.svg" alt="Original: google.svg" />
+          <figcaption>Original: google.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-google.svg" alt="HSL: google.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-google.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-google.svg" alt="Lum: google.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-google.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gpg.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gpg.svg" alt="Original: gpg.svg" />
+          <figcaption>Original: gpg.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gpg.svg" alt="HSL: gpg.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gpg.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gpg.svg" alt="Lum: gpg.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gpg.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>gump-bench.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/gump-bench.svg" alt="Original: gump-bench.svg" />
+          <figcaption>Original: gump-bench.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-gump-bench.svg" alt="HSL: gump-bench.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-gump-bench.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-gump-bench.svg" alt="Lum: gump-bench.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-gump-bench.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>heart.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/heart.svg" alt="Original: heart.svg" />
+          <figcaption>Original: heart.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-heart.svg" alt="HSL: heart.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-heart.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-heart.svg" alt="Lum: heart.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-heart.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>heliocentric.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/heliocentric.svg" alt="Original: heliocentric.svg" />
+          <figcaption>Original: heliocentric.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-heliocentric.svg" alt="HSL: heliocentric.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-heliocentric.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-heliocentric.svg" alt="Lum: heliocentric.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-heliocentric.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>helloworld.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/helloworld.svg" alt="Original: helloworld.svg" />
+          <figcaption>Original: helloworld.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-helloworld.svg" alt="HSL: helloworld.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-helloworld.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-helloworld.svg" alt="Lum: helloworld.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-helloworld.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>hg0.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/hg0.svg" alt="Original: hg0.svg" />
+          <figcaption>Original: hg0.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-hg0.svg" alt="HSL: hg0.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-hg0.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-hg0.svg" alt="Lum: hg0.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-hg0.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>http.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/http.svg" alt="Original: http.svg" />
+          <figcaption>Original: http.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-http.svg" alt="HSL: http.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-http.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-http.svg" alt="Lum: http.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-http.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ibm.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ibm.svg" alt="Original: ibm.svg" />
+          <figcaption>Original: ibm.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ibm.svg" alt="HSL: ibm.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ibm.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ibm.svg" alt="Lum: ibm.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ibm.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ie-lock.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ie-lock.svg" alt="Original: ie-lock.svg" />
+          <figcaption>Original: ie-lock.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ie-lock.svg" alt="HSL: ie-lock.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ie-lock.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ie-lock.svg" alt="Lum: ie-lock.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ie-lock.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ielock.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ielock.svg" alt="Original: ielock.svg" />
+          <figcaption>Original: ielock.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ielock.svg" alt="HSL: ielock.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ielock.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ielock.svg" alt="Lum: ielock.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ielock.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ietf.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ietf.svg" alt="Original: ietf.svg" />
+          <figcaption>Original: ietf.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ietf.svg" alt="HSL: ietf.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ietf.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ietf.svg" alt="Lum: ietf.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ietf.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>image.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/image.svg" alt="Original: image.svg" />
+          <figcaption>Original: image.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-image.svg" alt="HSL: image.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-image.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-image.svg" alt="Lum: image.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-image.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>instiki.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/instiki.svg" alt="Original: instiki.svg" />
+          <figcaption>Original: instiki.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-instiki.svg" alt="HSL: instiki.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-instiki.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-instiki.svg" alt="Lum: instiki.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-instiki.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>integral.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/integral.svg" alt="Original: integral.svg" />
+          <figcaption>Original: integral.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-integral.svg" alt="HSL: integral.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-integral.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-integral.svg" alt="Lum: integral.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-integral.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>intertwingly.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/intertwingly.svg" alt="Original: intertwingly.svg" />
+          <figcaption>Original: intertwingly.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-intertwingly.svg" alt="HSL: intertwingly.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-intertwingly.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-intertwingly.svg" alt="Lum: intertwingly.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-intertwingly.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>irony.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/irony.svg" alt="Original: irony.svg" />
+          <figcaption>Original: irony.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-irony.svg" alt="HSL: irony.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-irony.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-irony.svg" alt="Lum: irony.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-irony.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>italian-flag.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/italian-flag.svg" alt="Original: italian-flag.svg" />
+          <figcaption>Original: italian-flag.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-italian-flag.svg" alt="HSL: italian-flag.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-italian-flag.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-italian-flag.svg" alt="Lum: italian-flag.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-italian-flag.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>iw.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/iw.svg" alt="Original: iw.svg" />
+          <figcaption>Original: iw.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-iw.svg" alt="HSL: iw.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-iw.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-iw.svg" alt="Lum: iw.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-iw.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>jabber.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/jabber.svg" alt="Original: jabber.svg" />
+          <figcaption>Original: jabber.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-jabber.svg" alt="HSL: jabber.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-jabber.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-jabber.svg" alt="Lum: jabber.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-jabber.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>jquery.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/jquery.svg" alt="Original: jquery.svg" />
+          <figcaption>Original: jquery.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-jquery.svg" alt="HSL: jquery.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-jquery.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-jquery.svg" alt="Lum: jquery.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-jquery.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>json.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/json.svg" alt="Original: json.svg" />
+          <figcaption>Original: json.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-json.svg" alt="HSL: json.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-json.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-json.svg" alt="Lum: json.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-json.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>jsonatom.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/jsonatom.svg" alt="Original: jsonatom.svg" />
+          <figcaption>Original: jsonatom.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-jsonatom.svg" alt="HSL: jsonatom.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-jsonatom.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-jsonatom.svg" alt="Lum: jsonatom.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-jsonatom.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>juanmontoya_lingerie.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/juanmontoya_lingerie.svg" alt="Original: juanmontoya_lingerie.svg" />
+          <figcaption>Original: juanmontoya_lingerie.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-juanmontoya_lingerie.svg" alt="HSL: juanmontoya_lingerie.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-juanmontoya_lingerie.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-juanmontoya_lingerie.svg" alt="Lum: juanmontoya_lingerie.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-juanmontoya_lingerie.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>legal.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/legal.svg" alt="Original: legal.svg" />
+          <figcaption>Original: legal.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-legal.svg" alt="HSL: legal.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-legal.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-legal.svg" alt="Lum: legal.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-legal.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>lineargradient1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/lineargradient1.svg" alt="Original: lineargradient1.svg" />
+          <figcaption>Original: lineargradient1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-lineargradient1.svg" alt="HSL: lineargradient1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-lineargradient1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-lineargradient1.svg" alt="Lum: lineargradient1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-lineargradient1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>lineargradient2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/lineargradient2.svg" alt="Original: lineargradient2.svg" />
+          <figcaption>Original: lineargradient2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-lineargradient2.svg" alt="HSL: lineargradient2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-lineargradient2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-lineargradient2.svg" alt="Lum: lineargradient2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-lineargradient2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>lineargradient3.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/lineargradient3.svg" alt="Original: lineargradient3.svg" />
+          <figcaption>Original: lineargradient3.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-lineargradient3.svg" alt="HSL: lineargradient3.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-lineargradient3.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-lineargradient3.svg" alt="Lum: lineargradient3.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-lineargradient3.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>lineargradient4.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/lineargradient4.svg" alt="Original: lineargradient4.svg" />
+          <figcaption>Original: lineargradient4.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-lineargradient4.svg" alt="HSL: lineargradient4.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-lineargradient4.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-lineargradient4.svg" alt="Lum: lineargradient4.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-lineargradient4.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>m.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/m.svg" alt="Original: m.svg" />
+          <figcaption>Original: m.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-m.svg" alt="HSL: m.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-m.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-m.svg" alt="Lum: m.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-m.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mac.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mac.svg" alt="Original: mac.svg" />
+          <figcaption>Original: mac.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mac.svg" alt="HSL: mac.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mac.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mac.svg" alt="Lum: mac.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mac.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mail.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mail.svg" alt="Original: mail.svg" />
+          <figcaption>Original: mail.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mail.svg" alt="HSL: mail.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mail.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mail.svg" alt="Lum: mail.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mail.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mars.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mars.svg" alt="Original: mars.svg" />
+          <figcaption>Original: mars.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mars.svg" alt="HSL: mars.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mars.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mars.svg" alt="Lum: mars.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mars.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>masking-path-04-b.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/masking-path-04-b.svg" alt="Original: masking-path-04-b.svg" />
+          <figcaption>Original: masking-path-04-b.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-masking-path-04-b.svg" alt="HSL: masking-path-04-b.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-masking-path-04-b.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-masking-path-04-b.svg" alt="Lum: masking-path-04-b.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-masking-path-04-b.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mememe.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mememe.svg" alt="Original: mememe.svg" />
+          <figcaption>Original: mememe.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mememe.svg" alt="HSL: mememe.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mememe.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mememe.svg" alt="Lum: mememe.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mememe.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>microformat.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/microformat.svg" alt="Original: microformat.svg" />
+          <figcaption>Original: microformat.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-microformat.svg" alt="HSL: microformat.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-microformat.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-microformat.svg" alt="Lum: microformat.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-microformat.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mono.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mono.svg" alt="Original: mono.svg" />
+          <figcaption>Original: mono.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mono.svg" alt="HSL: mono.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mono.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mono.svg" alt="Lum: mono.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mono.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>moonlight.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/moonlight.svg" alt="Original: moonlight.svg" />
+          <figcaption>Original: moonlight.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-moonlight.svg" alt="HSL: moonlight.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-moonlight.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-moonlight.svg" alt="Lum: moonlight.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-moonlight.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mouseEvents.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mouseEvents.svg" alt="Original: mouseEvents.svg" />
+          <figcaption>Original: mouseEvents.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mouseEvents.svg" alt="HSL: mouseEvents.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mouseEvents.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mouseEvents.svg" alt="Lum: mouseEvents.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mouseEvents.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mozilla.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mozilla.svg" alt="Original: mozilla.svg" />
+          <figcaption>Original: mozilla.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mozilla.svg" alt="HSL: mozilla.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mozilla.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mozilla.svg" alt="Lum: mozilla.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mozilla.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>msft.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/msft.svg" alt="Original: msft.svg" />
+          <figcaption>Original: msft.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-msft.svg" alt="HSL: msft.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-msft.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-msft.svg" alt="Lum: msft.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-msft.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>msie.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/msie.svg" alt="Original: msie.svg" />
+          <figcaption>Original: msie.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-msie.svg" alt="HSL: msie.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-msie.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-msie.svg" alt="Lum: msie.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-msie.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mt.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mt.svg" alt="Original: mt.svg" />
+          <figcaption>Original: mt.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mt.svg" alt="HSL: mt.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mt.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mt.svg" alt="Lum: mt.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mt.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mudflap.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mudflap.svg" alt="Original: mudflap.svg" />
+          <figcaption>Original: mudflap.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mudflap.svg" alt="HSL: mudflap.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mudflap.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mudflap.svg" alt="Lum: mudflap.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mudflap.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>myspace.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/myspace.svg" alt="Original: myspace.svg" />
+          <figcaption>Original: myspace.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-myspace.svg" alt="HSL: myspace.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-myspace.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-myspace.svg" alt="Lum: myspace.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-myspace.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>mysvg.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/mysvg.svg" alt="Original: mysvg.svg" />
+          <figcaption>Original: mysvg.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-mysvg.svg" alt="HSL: mysvg.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-mysvg.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-mysvg.svg" alt="Lum: mysvg.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-mysvg.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>no.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/no.svg" alt="Original: no.svg" />
+          <figcaption>Original: no.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-no.svg" alt="HSL: no.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-no.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-no.svg" alt="Lum: no.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-no.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ny1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ny1.svg" alt="Original: ny1.svg" />
+          <figcaption>Original: ny1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ny1.svg" alt="HSL: ny1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ny1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ny1.svg" alt="Lum: ny1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ny1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>obama.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/obama.svg" alt="Original: obama.svg" />
+          <figcaption>Original: obama.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-obama.svg" alt="HSL: obama.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-obama.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-obama.svg" alt="Lum: obama.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-obama.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>odf.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/odf.svg" alt="Original: odf.svg" />
+          <figcaption>Original: odf.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-odf.svg" alt="HSL: odf.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-odf.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-odf.svg" alt="Lum: odf.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-odf.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>open-clipart.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/open-clipart.svg" alt="Original: open-clipart.svg" />
+          <figcaption>Original: open-clipart.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-open-clipart.svg" alt="HSL: open-clipart.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-open-clipart.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-open-clipart.svg" alt="Lum: open-clipart.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-open-clipart.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>openid.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/openid.svg" alt="Original: openid.svg" />
+          <figcaption>Original: openid.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-openid.svg" alt="HSL: openid.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-openid.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-openid.svg" alt="Lum: openid.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-openid.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>opensearch.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/opensearch.svg" alt="Original: opensearch.svg" />
+          <figcaption>Original: opensearch.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-opensearch.svg" alt="HSL: opensearch.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-opensearch.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-opensearch.svg" alt="Lum: opensearch.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-opensearch.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>openweb.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/openweb.svg" alt="Original: openweb.svg" />
+          <figcaption>Original: openweb.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-openweb.svg" alt="HSL: openweb.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-openweb.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-openweb.svg" alt="Lum: openweb.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-openweb.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>opera.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/opera.svg" alt="Original: opera.svg" />
+          <figcaption>Original: opera.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-opera.svg" alt="HSL: opera.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-opera.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-opera.svg" alt="Lum: opera.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-opera.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>osa.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/osa.svg" alt="Original: osa.svg" />
+          <figcaption>Original: osa.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-osa.svg" alt="HSL: osa.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-osa.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-osa.svg" alt="Lum: osa.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-osa.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>oscon.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/oscon.svg" alt="Original: oscon.svg" />
+          <figcaption>Original: oscon.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-oscon.svg" alt="HSL: oscon.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-oscon.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-oscon.svg" alt="Lum: oscon.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-oscon.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>osi.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/osi.svg" alt="Original: osi.svg" />
+          <figcaption>Original: osi.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-osi.svg" alt="HSL: osi.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-osi.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-osi.svg" alt="Lum: osi.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-osi.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>padlock.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/padlock.svg" alt="Original: padlock.svg" />
+          <figcaption>Original: padlock.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-padlock.svg" alt="HSL: padlock.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-padlock.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-padlock.svg" alt="Lum: padlock.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-padlock.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>patch.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/patch.svg" alt="Original: patch.svg" />
+          <figcaption>Original: patch.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-patch.svg" alt="HSL: patch.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-patch.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-patch.svg" alt="Lum: patch.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-patch.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>paths-data-08-t.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/paths-data-08-t.svg" alt="Original: paths-data-08-t.svg" />
+          <figcaption>Original: paths-data-08-t.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-paths-data-08-t.svg" alt="HSL: paths-data-08-t.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-paths-data-08-t.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-paths-data-08-t.svg" alt="Lum: paths-data-08-t.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-paths-data-08-t.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>paths-data-09-t.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/paths-data-09-t.svg" alt="Original: paths-data-09-t.svg" />
+          <figcaption>Original: paths-data-09-t.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-paths-data-09-t.svg" alt="HSL: paths-data-09-t.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-paths-data-09-t.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-paths-data-09-t.svg" alt="Lum: paths-data-09-t.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-paths-data-09-t.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>pdftk.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/pdftk.svg" alt="Original: pdftk.svg" />
+          <figcaption>Original: pdftk.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-pdftk.svg" alt="HSL: pdftk.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-pdftk.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-pdftk.svg" alt="Lum: pdftk.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-pdftk.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>pencil.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/pencil.svg" alt="Original: pencil.svg" />
+          <figcaption>Original: pencil.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-pencil.svg" alt="HSL: pencil.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-pencil.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-pencil.svg" alt="Lum: pencil.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-pencil.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>penrose-staircase.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/penrose-staircase.svg" alt="Original: penrose-staircase.svg" />
+          <figcaption>Original: penrose-staircase.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-penrose-staircase.svg" alt="HSL: penrose-staircase.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-penrose-staircase.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-penrose-staircase.svg" alt="Lum: penrose-staircase.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-penrose-staircase.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>penrose-tiling.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/penrose-tiling.svg" alt="Original: penrose-tiling.svg" />
+          <figcaption>Original: penrose-tiling.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-penrose-tiling.svg" alt="HSL: penrose-tiling.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-penrose-tiling.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-penrose-tiling.svg" alt="Lum: penrose-tiling.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-penrose-tiling.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>photos.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/photos.svg" alt="Original: photos.svg" />
+          <figcaption>Original: photos.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-photos.svg" alt="HSL: photos.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-photos.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-photos.svg" alt="Lum: photos.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-photos.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>php.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/php.svg" alt="Original: php.svg" />
+          <figcaption>Original: php.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-php.svg" alt="HSL: php.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-php.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-php.svg" alt="Lum: php.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-php.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>poi.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/poi.svg" alt="Original: poi.svg" />
+          <figcaption>Original: poi.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-poi.svg" alt="HSL: poi.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-poi.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-poi.svg" alt="Lum: poi.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-poi.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>preserveAspectRatio.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/preserveAspectRatio.svg" alt="Original: preserveAspectRatio.svg" />
+          <figcaption>Original: preserveAspectRatio.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <p class="no-file">No HSL file found for preserveAspectRatio.svg</p>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <p class="no-file">No Luminance file found for preserveAspectRatio.svg</p>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>pservers-grad-03-b-anim.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/pservers-grad-03-b-anim.svg" alt="Original: pservers-grad-03-b-anim.svg" />
+          <figcaption>Original: pservers-grad-03-b-anim.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-pservers-grad-03-b-anim.svg" alt="HSL: pservers-grad-03-b-anim.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-pservers-grad-03-b-anim.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-pservers-grad-03-b-anim.svg" alt="Lum: pservers-grad-03-b-anim.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-pservers-grad-03-b-anim.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>pservers-grad-03-b.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/pservers-grad-03-b.svg" alt="Original: pservers-grad-03-b.svg" />
+          <figcaption>Original: pservers-grad-03-b.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-pservers-grad-03-b.svg" alt="HSL: pservers-grad-03-b.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-pservers-grad-03-b.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-pservers-grad-03-b.svg" alt="Lum: pservers-grad-03-b.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-pservers-grad-03-b.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>pull.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/pull.svg" alt="Original: pull.svg" />
+          <figcaption>Original: pull.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-pull.svg" alt="HSL: pull.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-pull.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-pull.svg" alt="Lum: pull.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-pull.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>python.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/python.svg" alt="Original: python.svg" />
+          <figcaption>Original: python.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-python.svg" alt="HSL: python.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-python.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-python.svg" alt="Lum: python.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-python.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rack.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rack.svg" alt="Original: rack.svg" />
+          <figcaption>Original: rack.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rack.svg" alt="HSL: rack.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rack.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rack.svg" alt="Lum: rack.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rack.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>radialgradient1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/radialgradient1.svg" alt="Original: radialgradient1.svg" />
+          <figcaption>Original: radialgradient1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-radialgradient1.svg" alt="HSL: radialgradient1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-radialgradient1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-radialgradient1.svg" alt="Lum: radialgradient1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-radialgradient1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>radialgradient2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/radialgradient2.svg" alt="Original: radialgradient2.svg" />
+          <figcaption>Original: radialgradient2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-radialgradient2.svg" alt="HSL: radialgradient2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-radialgradient2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-radialgradient2.svg" alt="Lum: radialgradient2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-radialgradient2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rails.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rails.svg" alt="Original: rails.svg" />
+          <figcaption>Original: rails.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rails.svg" alt="HSL: rails.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rails.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rails.svg" alt="Lum: rails.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rails.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>raleigh.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/raleigh.svg" alt="Original: raleigh.svg" />
+          <figcaption>Original: raleigh.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-raleigh.svg" alt="HSL: raleigh.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-raleigh.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-raleigh.svg" alt="Lum: raleigh.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-raleigh.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rdf.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rdf.svg" alt="Original: rdf.svg" />
+          <figcaption>Original: rdf.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rdf.svg" alt="HSL: rdf.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rdf.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rdf.svg" alt="Lum: rdf.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rdf.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rectangles.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rectangles.svg" alt="Original: rectangles.svg" />
+          <figcaption>Original: rectangles.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rectangles.svg" alt="HSL: rectangles.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rectangles.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rectangles.svg" alt="Lum: rectangles.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rectangles.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rest.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rest.svg" alt="Original: rest.svg" />
+          <figcaption>Original: rest.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rest.svg" alt="HSL: rest.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rest.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rest.svg" alt="Lum: rest.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rest.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rfeed.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rfeed.svg" alt="Original: rfeed.svg" />
+          <figcaption>Original: rfeed.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rfeed.svg" alt="HSL: rfeed.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rfeed.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rfeed.svg" alt="Lum: rfeed.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rfeed.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rg1024_Presentation_with_girl.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rg1024_Presentation_with_girl.svg" alt="Original: rg1024_Presentation_with_girl.svg" />
+          <figcaption>Original: rg1024_Presentation_with_girl.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rg1024_Presentation_with_girl.svg" alt="HSL: rg1024_Presentation_with_girl.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rg1024_Presentation_with_girl.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rg1024_Presentation_with_girl.svg" alt="Lum: rg1024_Presentation_with_girl.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rg1024_Presentation_with_girl.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rg1024_Ufo_in_metalic_style.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rg1024_Ufo_in_metalic_style.svg" alt="Original: rg1024_Ufo_in_metalic_style.svg" />
+          <figcaption>Original: rg1024_Ufo_in_metalic_style.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rg1024_Ufo_in_metalic_style.svg" alt="HSL: rg1024_Ufo_in_metalic_style.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rg1024_Ufo_in_metalic_style.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rg1024_Ufo_in_metalic_style.svg" alt="Lum: rg1024_Ufo_in_metalic_style.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rg1024_Ufo_in_metalic_style.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rg1024_eggs.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rg1024_eggs.svg" alt="Original: rg1024_eggs.svg" />
+          <figcaption>Original: rg1024_eggs.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rg1024_eggs.svg" alt="HSL: rg1024_eggs.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rg1024_eggs.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rg1024_eggs.svg" alt="Lum: rg1024_eggs.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rg1024_eggs.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rg1024_green_grapes.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rg1024_green_grapes.svg" alt="Original: rg1024_green_grapes.svg" />
+          <figcaption>Original: rg1024_green_grapes.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rg1024_green_grapes.svg" alt="HSL: rg1024_green_grapes.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rg1024_green_grapes.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rg1024_green_grapes.svg" alt="Lum: rg1024_green_grapes.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rg1024_green_grapes.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rg1024_metal_effect.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rg1024_metal_effect.svg" alt="Original: rg1024_metal_effect.svg" />
+          <figcaption>Original: rg1024_metal_effect.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rg1024_metal_effect.svg" alt="HSL: rg1024_metal_effect.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rg1024_metal_effect.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rg1024_metal_effect.svg" alt="Lum: rg1024_metal_effect.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rg1024_metal_effect.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ruby.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ruby.svg" alt="Original: ruby.svg" />
+          <figcaption>Original: ruby.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ruby.svg" alt="HSL: ruby.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ruby.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ruby.svg" alt="Lum: ruby.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ruby.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>rubyforge.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/rubyforge.svg" alt="Original: rubyforge.svg" />
+          <figcaption>Original: rubyforge.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-rubyforge.svg" alt="HSL: rubyforge.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-rubyforge.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-rubyforge.svg" alt="Lum: rubyforge.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-rubyforge.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>scimitar-anim.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/scimitar-anim.svg" alt="Original: scimitar-anim.svg" />
+          <figcaption>Original: scimitar-anim.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-scimitar-anim.svg" alt="HSL: scimitar-anim.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-scimitar-anim.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-scimitar-anim.svg" alt="Lum: scimitar-anim.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-scimitar-anim.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>scimitar.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/scimitar.svg" alt="Original: scimitar.svg" />
+          <figcaption>Original: scimitar.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-scimitar.svg" alt="HSL: scimitar.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-scimitar.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-scimitar.svg" alt="Lum: scimitar.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-scimitar.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>scion.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/scion.svg" alt="Original: scion.svg" />
+          <figcaption>Original: scion.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-scion.svg" alt="HSL: scion.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-scion.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-scion.svg" alt="Lum: scion.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-scion.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>semweb.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/semweb.svg" alt="Original: semweb.svg" />
+          <figcaption>Original: semweb.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-semweb.svg" alt="HSL: semweb.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-semweb.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-semweb.svg" alt="Lum: semweb.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-semweb.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>shapes-polygon-01-t.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/shapes-polygon-01-t.svg" alt="Original: shapes-polygon-01-t.svg" />
+          <figcaption>Original: shapes-polygon-01-t.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-shapes-polygon-01-t.svg" alt="HSL: shapes-polygon-01-t.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-shapes-polygon-01-t.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-shapes-polygon-01-t.svg" alt="Lum: shapes-polygon-01-t.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-shapes-polygon-01-t.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>shapes-polyline-01-t.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/shapes-polyline-01-t.svg" alt="Original: shapes-polyline-01-t.svg" />
+          <figcaption>Original: shapes-polyline-01-t.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <p class="no-file">No HSL file found for shapes-polyline-01-t.svg</p>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <p class="no-file">No Luminance file found for shapes-polyline-01-t.svg</p>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>smile.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/smile.svg" alt="Original: smile.svg" />
+          <figcaption>Original: smile.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <p class="no-file">No HSL file found for smile.svg</p>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <p class="no-file">No Luminance file found for smile.svg</p>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>snake.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/snake.svg" alt="Original: snake.svg" />
+          <figcaption>Original: snake.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-snake.svg" alt="HSL: snake.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-snake.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-snake.svg" alt="Lum: snake.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-snake.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>star.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/star.svg" alt="Original: star.svg" />
+          <figcaption>Original: star.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-star.svg" alt="HSL: star.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-star.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-star.svg" alt="Lum: star.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-star.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>svg.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/svg.svg" alt="Original: svg.svg" />
+          <figcaption>Original: svg.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-svg.svg" alt="HSL: svg.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-svg.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-svg.svg" alt="Lum: svg.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-svg.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>svg2009.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/svg2009.svg" alt="Original: svg2009.svg" />
+          <figcaption>Original: svg2009.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <p class="no-file">No HSL file found for svg2009.svg</p>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <p class="no-file">No Luminance file found for svg2009.svg</p>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>svg_header-clean.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/svg_header-clean.svg" alt="Original: svg_header-clean.svg" />
+          <figcaption>Original: svg_header-clean.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <p class="no-file">No HSL file found for svg_header-clean.svg</p>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <p class="no-file">No Luminance file found for svg_header-clean.svg</p>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>sync.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/sync.svg" alt="Original: sync.svg" />
+          <figcaption>Original: sync.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-sync.svg" alt="HSL: sync.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-sync.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-sync.svg" alt="Lum: sync.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-sync.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>tiger.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/tiger.svg" alt="Original: tiger.svg" />
+          <figcaption>Original: tiger.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-tiger.svg" alt="HSL: tiger.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-tiger.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-tiger.svg" alt="Lum: tiger.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-tiger.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>tommek_Car.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/tommek_Car.svg" alt="Original: tommek_Car.svg" />
+          <figcaption>Original: tommek_Car.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-tommek_Car.svg" alt="HSL: tommek_Car.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-tommek_Car.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-tommek_Car.svg" alt="Lum: tommek_Car.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-tommek_Car.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>twitter.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/twitter.svg" alt="Original: twitter.svg" />
+          <figcaption>Original: twitter.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-twitter.svg" alt="HSL: twitter.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-twitter.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-twitter.svg" alt="Lum: twitter.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-twitter.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>ubuntu.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/ubuntu.svg" alt="Original: ubuntu.svg" />
+          <figcaption>Original: ubuntu.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-ubuntu.svg" alt="HSL: ubuntu.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-ubuntu.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-ubuntu.svg" alt="Lum: ubuntu.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-ubuntu.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>unicode-han.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/unicode-han.svg" alt="Original: unicode-han.svg" />
+          <figcaption>Original: unicode-han.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-unicode-han.svg" alt="HSL: unicode-han.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-unicode-han.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-unicode-han.svg" alt="Lum: unicode-han.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-unicode-han.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>unicode.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/unicode.svg" alt="Original: unicode.svg" />
+          <figcaption>Original: unicode.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-unicode.svg" alt="HSL: unicode.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-unicode.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-unicode.svg" alt="Lum: unicode.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-unicode.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>usaf.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/usaf.svg" alt="Original: usaf.svg" />
+          <figcaption>Original: usaf.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-usaf.svg" alt="HSL: usaf.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-usaf.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-usaf.svg" alt="Lum: usaf.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-usaf.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>utensils.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/utensils.svg" alt="Original: utensils.svg" />
+          <figcaption>Original: utensils.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-utensils.svg" alt="HSL: utensils.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-utensils.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-utensils.svg" alt="Lum: utensils.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-utensils.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>venus.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/venus.svg" alt="Original: venus.svg" />
+          <figcaption>Original: venus.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-venus.svg" alt="HSL: venus.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-venus.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-venus.svg" alt="Lum: venus.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-venus.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>video1.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/video1.svg" alt="Original: video1.svg" />
+          <figcaption>Original: video1.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-video1.svg" alt="HSL: video1.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-video1.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-video1.svg" alt="Lum: video1.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-video1.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>videos.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/videos.svg" alt="Original: videos.svg" />
+          <figcaption>Original: videos.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-videos.svg" alt="HSL: videos.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-videos.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-videos.svg" alt="Lum: videos.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-videos.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>vmware.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/vmware.svg" alt="Original: vmware.svg" />
+          <figcaption>Original: vmware.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-vmware.svg" alt="HSL: vmware.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-vmware.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-vmware.svg" alt="Lum: vmware.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-vmware.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>vnu.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/vnu.svg" alt="Original: vnu.svg" />
+          <figcaption>Original: vnu.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-vnu.svg" alt="HSL: vnu.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-vnu.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-vnu.svg" alt="Lum: vnu.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-vnu.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>vote.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/vote.svg" alt="Original: vote.svg" />
+          <figcaption>Original: vote.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-vote.svg" alt="HSL: vote.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-vote.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-vote.svg" alt="Lum: vote.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-vote.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>w3c.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/w3c.svg" alt="Original: w3c.svg" />
+          <figcaption>Original: w3c.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-w3c.svg" alt="HSL: w3c.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-w3c.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-w3c.svg" alt="Lum: w3c.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-w3c.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>whatwg.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/whatwg.svg" alt="Original: whatwg.svg" />
+          <figcaption>Original: whatwg.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-whatwg.svg" alt="HSL: whatwg.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-whatwg.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-whatwg.svg" alt="Lum: whatwg.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-whatwg.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>why.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/why.svg" alt="Original: why.svg" />
+          <figcaption>Original: why.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-why.svg" alt="HSL: why.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-why.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-why.svg" alt="Lum: why.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-why.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>wii.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/wii.svg" alt="Original: wii.svg" />
+          <figcaption>Original: wii.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-wii.svg" alt="HSL: wii.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-wii.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-wii.svg" alt="Lum: wii.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-wii.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>wikimedia.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/wikimedia.svg" alt="Original: wikimedia.svg" />
+          <figcaption>Original: wikimedia.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-wikimedia.svg" alt="HSL: wikimedia.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-wikimedia.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-wikimedia.svg" alt="Lum: wikimedia.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-wikimedia.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>wireless.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/wireless.svg" alt="Original: wireless.svg" />
+          <figcaption>Original: wireless.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-wireless.svg" alt="HSL: wireless.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-wireless.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-wireless.svg" alt="Lum: wireless.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-wireless.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>wp.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/wp.svg" alt="Original: wp.svg" />
+          <figcaption>Original: wp.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-wp.svg" alt="HSL: wp.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-wp.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-wp.svg" alt="Lum: wp.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-wp.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>wso2.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/wso2.svg" alt="Original: wso2.svg" />
+          <figcaption>Original: wso2.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-wso2.svg" alt="HSL: wso2.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-wso2.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-wso2.svg" alt="Lum: wso2.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-wso2.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>x11.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/x11.svg" alt="Original: x11.svg" />
+          <figcaption>Original: x11.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-x11.svg" alt="HSL: x11.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-x11.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-x11.svg" alt="Lum: x11.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-x11.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>yadis.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/yadis.svg" alt="Original: yadis.svg" />
+          <figcaption>Original: yadis.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-yadis.svg" alt="HSL: yadis.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-yadis.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-yadis.svg" alt="Lum: yadis.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-yadis.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>yahoo.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/yahoo.svg" alt="Original: yahoo.svg" />
+          <figcaption>Original: yahoo.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-yahoo.svg" alt="HSL: yahoo.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-yahoo.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-yahoo.svg" alt="Lum: yahoo.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-yahoo.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>yinyang.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/yinyang.svg" alt="Original: yinyang.svg" />
+          <figcaption>Original: yinyang.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-yinyang.svg" alt="HSL: yinyang.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-yinyang.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-yinyang.svg" alt="Lum: yinyang.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-yinyang.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <div class="item">
+      <h2>zillow.svg</h2>
+      <div class="compare-box">
+        <!-- Original -->
+        <figure>
+          <img src="./svgs/zillow.svg" alt="Original: zillow.svg" />
+          <figcaption>Original: zillow.svg</figcaption>
+        </figure>
+
+        <!-- HSL Grayscale -->
+        <figure>
+          <img src="./output/grayscale-hsl-zillow.svg" alt="HSL: zillow.svg" />
+                 <figcaption>HSL Grayscale: grayscale-hsl-zillow.svg</figcaption>
+        </figure>
+
+        <!-- Luminance Grayscale -->
+        <figure>
+          <img src="./output/grayscale-lum-zillow.svg" alt="Lum: zillow.svg" />
+                 <figcaption>Luminance Grayscale: grayscale-lum-zillow.svg</figcaption>
+        </figure>
+      </div>
+    </div>
+  
+</body>
+</html>
