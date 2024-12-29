@@ -98,6 +98,20 @@ import { convertSvgToGrayscale } from './grayscale-svg.js';
   ```
   Produces `test/compare.html` to view original & grayscale outputs side by side in a browser.
 
+### 4 Hue, Saturation, Lightness (HSL) vs Luminance
+
+Here’s a comparison table for the two grayscale methods:
+
+| **Aspect**         | **HSL Grayscale**                          | **Luminance Grayscale**                          |
+|---------------------|--------------------------------------------|-------------------------------------------------|
+| **Conversion**     | Set Saturation = 0%, keep Lightness same.  | Weighted sum of RGB values (Y = 0.299R + 0.587G + 0.114B). |
+| **Brightness**     | Based on **HSL lightness**.                | Based on **perceived brightness** (human vision). |
+| **Perceived Differences** | Colors with the same lightness look similar (e.g., red and yellow). | Colors with different brightness are distinct. |
+| **Red (#ff0000)**  | Medium gray (e.g., **#808080**).           | Dark gray (e.g., **#4c4c4c**).                  |
+| **Yellow (#ffff00)** | Medium gray (e.g., **#808080**).         | Light gray (e.g., **#e2e2e2**).                 |
+| **Use Case**       | Easier for designers, aligns with HSL editing. | Better for visual accuracy, perceptual graphics. |
+
+
 ### Known Limitations
 
 - **No `<style>` Tag Parsing**: Inline or external CSS rules aren’t parsed.  
