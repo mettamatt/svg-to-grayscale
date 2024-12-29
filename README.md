@@ -11,6 +11,8 @@ It includes:
 2. An **example page** (`index.html`) hosted on GitHub Pages, letting users upload an SVG to produce two grayscale variants.
 3. A **Node-based test suite** that processes a folder of edge-case SVGs (`test/svgs`) and produces HSL & luminance outputs in `test/output`.
 
+CHECK IT OUT HERE: https://mettamatt.github.io/svg-to-grayscale/
+
 ## Features
 
 - **Two Grayscale Approaches**  
