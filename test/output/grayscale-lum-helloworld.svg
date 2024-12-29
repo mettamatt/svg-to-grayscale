@@ -21,4 +21,4 @@
           alert('You pressed the mouse button on our circle: ' + evt.target.id);
         }, false);
      }
-  </script><g id="myGroup" fill="#1d1d1d"><circle id="myCircle" cx="100" cy="75" r="50" stroke="#4d4d4d" stroke-width="3"/><text x="100" y="155">Hello World</text><text x="100" y="175">From An SVG File!</text></g></svg>
+  </script><g id="myGroup" fill="#1d1d1dff"><circle id="myCircle" cx="100" cy="75" r="50" stroke="#4d4d4dff" stroke-width="3"/><text x="100" y="155">Hello World</text><text x="100" y="175">From An SVG File!</text></g></svg>
