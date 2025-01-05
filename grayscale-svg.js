@@ -38,6 +38,9 @@ export async function convertSvgToGrayscale(svgString, options = {}) {
     grayscaleMethod = 'hsl',   // 'hsl' or 'luminance'
   } = options;
 
+  // Clean up the input so parseSync doesn't see DOCTYPE or xml declarations
+  svgString = removeDoctypeAndXml(svgString);
+
   // Parse the SVG into an AST
   const ast = parseSync(svgString);
 
@@ -57,6 +60,15 @@ export async function convertSvgToGrayscale(svgString, options = {}) {
 
   // Re-stringify the modified AST
   return stringify(ast);
+}
+
+/**
+ * Strips out <!DOCTYPE ...> and <?xml ...?> declarations
+ * so that svgson's parseSync won't fail.
+ */
+function removeDoctypeAndXml(str) {
+  // This regex finds <!DOCTYPE ...> or <?xml ...?> lines and removes them.
+  return str.replace(/<[\/]{0,1}(\!?DOCTYPE|\??xml)[^><]*>/gi, '');
 }
 
 /**
