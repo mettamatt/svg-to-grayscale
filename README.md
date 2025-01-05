@@ -17,7 +17,7 @@ CHECK IT OUT HERE: https://mettamatt.github.io/svg-to-grayscale/
 
 - **Two Grayscale Approaches**  
   - **HSL**: Uses TinyColor’s `.greyscale()` (an HSL desaturation). Red/yellow may converge if their HSL lightness is similar.  
-  - **Luminance**: Uses \(\text{Y} = 0.299R + 0.587G + 0.114B\). Distinguishes brightness differences (e.g. red vs. yellow).
+  - **Luminance**: Uses \(\text{Y} = 0.299R + 0.587G + 0.114B\). Distinguishes brightness differences (e.g. red vs. yellow, blue vs. green).
 
 - **Partial Desaturation** (HSL only):
   - `desaturationAmount = 0` → keep color, up to `100` → full grayscale.  
